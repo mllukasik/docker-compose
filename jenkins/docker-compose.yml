@@ -9,3 +9,7 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
     volumes:
       - jenkins_data:/var/jenkins_home
+
+volumes:
+  jenkins_data:
+    driver: local
