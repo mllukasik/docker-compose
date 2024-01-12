@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  mitmproxy:
+    image: mitmproxy/mitmproxy
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    environment:
+      - SSLKEYLOGFILE=/etc/ssl_key_logs/sslkeylogfile.log
+    command: mitmweb --web-host 0.0.0.0 --web-port 9090 -k
+    volumes:
+      - ./ssl_logs:/etc/ssl_key_logs
